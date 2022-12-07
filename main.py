@@ -6,9 +6,11 @@ import pandas
 
 # The way to look at the table is down
 
-# TODO The top rows needed to get edited to show the true percentage of the working weigh relative to the weighting weight
-# max the next thing to do is we need to edit the table so it only shows the useful bit sof oinformation not any duplicated information
-
+# TODO Each data point should have the true percentage with 1pm
+# TODO Could change the percentages on the top tempted to see.
+# TODO other methods of 1 rep max including lombardi and Epely could be implemented to this feature.
+# TODO Real application will be useful
+# TODO Relative intestity calulcator for example you input the weight that you did with the number of reps and it will tell you the relative itensity
 
 def rpmindex(repm):
     if repm == 1:
@@ -48,10 +50,7 @@ def data_log(weight, reps):
         row_data = []
         temp_weight = (weight * rpmindex(counter + 1) / 100)
         for j in range(1, reps + 1):
-            if counter < j - 1:
-                row_data.append(" ")
-            else:
-                row_data.append((temp_weight * rpmindex(j) / 100))
+            row_data.append((temp_weight * rpmindex(j) / 100))
         counter += 1
         sub_data.append(row_data)
 
